@@ -27,17 +27,52 @@ $.ajax({
         	carDiv.append(carImage);
         	$('#gifsAppearHere').prepend(carDiv);
 
-    //Search Button On click
-        $('#searchBtn').on('click', function() {
-        // Get Search Term
-        queryTerm = $('#search').val().trim()
-
-        // Add in the Search Term
-        var newURL = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=dc6zaTOxFJmzC&limit=10";
-        });
         	//DATA STATE ON CLICK
 
         }
 
+    });
 });
+//=====================SEARCH BUTTON ON CLICK FUNCTIONWITH NEW BUTTON=====================
+//Search Button On click
+$('#searchBtn').on('click', function() {
+    // Get Search Term
+    queryTerm = $('#search').val().trim()
+    // Add in the Search Term
+    var newURL = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=dc6zaTOxFJmzC&limit=10";
+    console.log(newURL);
+
+    //ADD a button with search term
+    var searchResultButton = ('<button>'+ queryTerm+ '</button>')
+    $('.searchedCarButtons').append(searchResultButton);
+
+    //add function to the new button
+    $('.searchedCarButtons').on("click", function(){
+        $.ajax({
+            url:newURL,
+            method: 'GET'
+        })
+        .done(function(response){
+             console.log (response);
+
+             var searchResults = response.data;
+
+             for (var i=0; i<searchResults.length; i++){
+                var searchedCarDiv = $('<div class = "searchedItem">');
+
+                var searchedRating = searchResults[i].rating;
+                
+                var searchedP = $('<p>').text("Rating: " + searchedRating);
+                
+                var searchedCarImg = $('<img>');
+                searchedCarImg.attr('src', searchResults[i].images.fixed_height.url);
+                
+                searchedCarDiv.append(searchedP);
+                searchedCarDiv.append(searchedCarImg);
+                $('gifsAppearHere').prepend(searchedCarDiv);
+             }
+
+        });
+    });
+
 });

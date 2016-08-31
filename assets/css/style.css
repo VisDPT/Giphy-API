@@ -21,7 +21,13 @@ button{
 	color:yellow;
 	font-size: 25px;
 	clear: both;
-
+}
+button:hover{
+	background-color: yellow;
+	color:black;
+	font-size: 30px;
+	clear: both;
+	border: 2px, ridge, black;
 }
 
 #search{
