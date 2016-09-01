@@ -12,10 +12,13 @@ header{
 
 }
 
-/*p{
-	color: blue;
+p{
+	color:red;
 	font-size: 30px;
-} */
+	background-color: black;
+	width: 150px;
+
+} 
 
 button{
 	background-color: black;
@@ -46,14 +49,14 @@ button:hover{
 	margin-left: -5px;
 	margin-top: 15px;
 	font-size: 16px;
-	width: 150px; 
+	width: 140px; 
 };
 
 
 
 .item{
-	float: left;
-	width:300px;
+	float: right;
+	width:250px;
 	margin: 10px;
 } 
 
