@@ -34,9 +34,9 @@ header{
 text-align: center;
 font-size: 40px;
 text-shadow:
--1px -1px 0 #FFD700,
+-1px -1px 0 white,
 1px -1px 0 white,
--1px 1px 0 #FFD700,
+-1px 1px 0 white,
 1px 1px 0 white;
 }
 
