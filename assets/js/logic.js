@@ -1,6 +1,6 @@
 $('button').on('click', function() {
 var car = $(this).data('car');
-var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&api_key=dc6zaTOxFJmzC&limit=10"; 
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&api_key=dc6zaTOxFJmzC&limit=4";
 
 
 $.ajax({
@@ -12,18 +12,18 @@ $.ajax({
         //response.data because image info is inside the data key
         var results = response.data;
 
-        //for loop to display only 10 results
+        //for loop to display only 4 results
         for(var i =0; i<results.length; i++){
-        	var carDiv = $('<div class = "item">');       	
+        	var carDiv = $('<div class = "item">');
         	var rating = results[i].rating;
         	var p = $('<p>').text("Rating: " + rating);
-        		
+
         	var img = $('<img>');
         	img.attr('src', results[i].images.fixed_height_still.url);
 
             //DATA STATES added to img tag
             img.attr('data-still', results[i].images.fixed_height_still.url);
-            img.attr('data-animate', results[i].images.fixed_height.url); 
+            img.attr('data-animate', results[i].images.fixed_height.url);
             img.attr('data-state', 'still');
             img.attr('class', 'carImages');
             console.log(img);
@@ -50,7 +50,7 @@ function dataState(){
     } else {
         $(this).attr('src', $(this).attr('data-still'));
         $(this).attr('data-state', 'still');
-    } 
+    }
 };
 
 //=====================SEARCH BUTTON ON CLICK FUNCTIONWITH NEW BUTTON=====================
@@ -59,7 +59,7 @@ $('#searchBtn').on('click', function() {
     // Get Search Term
     queryTerm = $('#search').val().trim();
     // Add in the Search Term
-    var newURL = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=dc6zaTOxFJmzC&limit=10";
+    var newURL = "https://api.giphy.com/v1/gifs/search?q=" + queryTerm + "&api_key=dc6zaTOxFJmzC&limit=4";
     console.log(newURL);
 
     //=============== ADD a button with search term ======================
@@ -80,15 +80,15 @@ $('#searchBtn').on('click', function() {
                 var sCarDiv = $('<div class = "item">');
                 var sRating = sResults[i].rating;
                 var sP = $('<p>').text("Rating: " + sRating);
-                
+
                 var sImg = $('<img>');
                 sImg.attr('src', sResults[i].images.fixed_height_still.url);
                 sImg.attr('data-still', sResults[i].images.fixed_height_still.url);
-                sImg.attr('data-animate', sResults[i].images.fixed_height.url); 
+                sImg.attr('data-animate', sResults[i].images.fixed_height.url);
                 sImg.attr('data-state', 'still');
                 sImg.attr('class', 'carImages');
 
-                
+
                 sCarDiv.append(sP);
                 sCarDiv.append(sImg);
                 $('#gifsAppearHere').prepend(sCarDiv);
@@ -97,4 +97,3 @@ $('#searchBtn').on('click', function() {
         });
     });
 });
-

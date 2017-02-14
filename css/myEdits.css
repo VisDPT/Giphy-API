@@ -1,0 +1,65 @@
+body{
+  background-color: black;
+}
+
+header{
+
+  background-image: url(../assets/images/nevadaRoad.jpg);
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-size: cover;
+
+}
+
+
+#carHeading{
+  color: black;
+  text-align: center;
+  margin-top: 20%;
+  text-shadow:
+-1px -1px 0 white,
+1px -1px 0 white,
+-1px 1px 0 white,
+1px 1px 0 white;
+}
+
+.title{
+  text-align: center;
+  font-size: 90px;
+
+/*  text-shadow: 0 0 10px white, 0 0 15px black;*/
+
+}
+#subtitle{
+text-align: center;
+font-size: 40px;
+text-shadow:
+-1px -1px 0 #FFD700,
+1px -1px 0 white,
+-1px 1px 0 #FFD700,
+1px 1px 0 white;
+}
+
+#tryIt{
+    text-shadow: none;
+    background-color: black;
+    color:#FFD700;
+}
+
+#tryIt:hover{
+    text-shadow: none;
+    color: black;
+    background-color:#FFD700;
+}
+
+#download{
+  background-color: #FFD700;
+}
+
+#searchBtn{
+  margin-bottom: 5%;
+}
+
+footer{
+  height:5%;
+}

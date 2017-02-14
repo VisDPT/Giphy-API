@@ -1,1 +1,1 @@
-<?php include_once("GIPHYhw.html"); ?>
+<?php include_once("main.html"); ?>
