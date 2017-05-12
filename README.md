@@ -1,4 +1,4 @@
-Animated Car Giphys;
+ANIMATED CAR GIPHYS
 
 Javascript ~ jQuery ~ Giphy API ~ HTML ~ CSS ~ Mobile Responsive;
 
